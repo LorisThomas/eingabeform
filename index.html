@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ärztliches Qualif</title>
+
+  <!-- 1. Include jQuery (from a CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- 2. Include Select2 CSS & JS (from the official CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- 3. Some basic in-page CSS (optional) 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    select {
+      width: 60%; /* let the Select2 box have a decent width */
+    }
+  </style> 
+  -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+
+<body>
+  <h1>Ärztliche Qualifikationen</h1>
+
+  <form action="qualifications_doctors.php" method="POST"> 
+    <!-- First multi-select: Fachrichtung -->
+    <h2><label for="Fachgebiet und Facharztkompetenz">Fachgebiet und Facharztkompetenz</label></h2>
+    <p>
+      <select name="Fachgebiet und Facharztkompetenz[]" id="F2" multiple="multiple">
+        <optgroup label="Chirurgie">
+          <option value="allgemeinchirurgie">Allgemeinchirurgie</option>
+          <option value="gefäßchirurgie">Gefäßchirurgie</option>
+          <option value="herzchirurgie">Herzchirurgie</option>
+          <option value="kinder- und jugendchirurgie">Kinder- und Jugendchirurgie</option>
+          <option value="orthopädie und unfallchirurgie">Orthopädie und Unfallchirurgie</option>
+          <option value="Plastische, Rekonstruktive und Ästhetische Chirurgie ">Plastische, Rekonstruktive und Ästhetische Chirurgie </option>
+          <option value="Thoraxchirurgie">Thoraxchirurgie</option>
+          <option value="Viszeralchirurgie">Viszeralchirurgie</option>
+        </optgroup>
+        <optgroup label="Innere Medizin">
+          <option value="Innere Medizin">Innere Medizin</option>
+          <option value="Innere Medizin und Angiologie">Innere Medizin und Angiologie</option>
+          <option value="Innere Medizin und Endokrinologie und Diabetologie">Innere Medizin und Endokrinologie und Diabetologie</option>
+          <option value="Innere Medizin und Gastroenterologie">Innere Medizin und Gastroenterologie</option>
+          <option value="Innere Medizin und Hämatologie und Onkologie">Innere Medizin und Hämatologie und Onkologie</option>
+          <option value="Innere Medizin und Infektiologie">Innere Medizin und Infektiologie</option>
+          <option value="Innere Medizin und Kardiologie">Innere Medizin und Kardiologie</option>
+          <option value="Innere Medizin und Nephrologie">Innere Medizin und Nephrologie</option>
+          <option value="Innere Medizin und Pneumologie">Innere Medizin und Pneumologie</option>
+          <option value="Innere Medizin und Rheumatologie">Innere Medizin und Rheumatologie</option>
+        </optgroup>
+        <optgroup label="Andere">
+          <option value="Allgemeinmedizin">Allgemeinmedizin</option>
+          <option value="Anästhesiologie">Anästhesiologie</option>   
+          <option value="Kinder- und Jugendmedizin">Kinder- und Jugendmedizin</option>
+          <option value="Rechtsmedizin">Rechtsmedizin</option>
+          <option value="Strahlentherapie">Strahlentherapie</option>
+          <option value="Transfusionsmedizin">Transfusionsmedizin</option>
+          <option value="Urologie">Urologie</option>
+          <option value="Anatomie">Anatomie</option>
+          <option value="Arbeitsmedizin">Arbeitsmedizin</option>
+          <option value="Frauenheilkunde und Geburtshilfe">Frauenheilkunde und Geburtshilfe</option>
+          <option value="Augenheilkunde">Augenheilkunde</option>
+          <option value="Biochemie">Biochemie</option>
+          <option value="Hals-Nasen-Ohrenheilkunde">Hals-Nasen-Ohrenheilkunde</option>
+          <option value="Haut- und Geschlechtskrankheiten">Haut- und Geschlechtskrankheiten</option>
+          <option value="Humangenetik">Humangenetik</option>
+          <option value="Hygiene und Umweltmedizin">Hygiene und Umweltmedizin</option>
+          <option value="Kinder- und Jugendpsychiatrie und -psychotherapie">Kinder- und Jugendpsychiatrie und -psychotherapie</option>
+          <option value="Laboratoriumsmedizin">Laboratoriumsmedizin</option>
+          <option value="Mikrobiologie, Virologie und Infektionsepidemiologie">Mikrobiologie, Virologie und Infektionsepidemiologie</option>
+          <option value="Mund-Kiefer-Gesichtschirurgie">Mund-Kiefer-Gesichtschirurgie</option>
+          <option value="Neurochirurgie">Neurochirurgie</option>
+          <option value="Neurologie">Neurologie</option>
+          <option value="Nuklearmedizin">Nuklearmedizin</option>
+          <option value="Öffentliches Gesundheitswesen">Öffentliches Gesundheitswesen</option>
+          <option value="Neuropathologie">Neuropathologie</option>
+          <option value="Pathologie">Pathologie</option>
+          <option value="Klinische Pharmakologie">Klinische Pharmakologie</option>
+          <option value="Pharmakologie und Toxikologie">Pharmakologie und Toxikologie</option>
+          <option value="Phoniatrie und Pädaudiologie">Phoniatrie und Pädaudiologie</option>
+          <option value="Physikalische und Rehabilitative Medizin">Physikalische und Rehabilitative Medizin</option>
+          <option value="Physiologie">Physiologie</option>
+          <option value="Psychosomatische Medizin und Psychotherapie">Psychosomatische Medizin und Psychotherapie</option>
+          <option value="Rechtsmedizin">Rechtsmedizin</option>
+          <option value="Strahlentherapie">Strahlentherapie</option>
+          <option value="Transfusionsmedizin">Transfusionsmedizin</option>
+          <option value="Urologie">Urologie</option>
+        </optgroup>
+      </select>
+    </p>
+
+    <h2><label for="Schwerpunkte">Schwerpunkte</label></h2>
+    <select name="Schwerpunkte" id="Schwerpunkte" multiple="multiple">
+      <optgroup label="Frauenheilkunde und Geburtshilfe">
+        <option value="Gynäkologische Endokrinologie und Reproduktionsmedizin">Gynäkologische Endokrinologie und Reproduktionsmedizin</option>
+        <option value="Gynäkologische Onkologie">Gynäkologische Onkologie</option>
+        <option value="Spezielle Geburtshilfe und Perinatalmedizin">Spezielle Geburtshilfe und Perinatalmedizin</option>
+      </optgroup>
+      <optgroup label="Kinder- und Jugendmedizin">
+        <option value="Kinder- und Jugend-Hämatologie und -Onkologie">Kinder- und Jugend-Hämatologie und -Onkologie</option>
+        <option value="Kinder- und Jugend-Kardiologie">Kinder- und Jugend-Kardiologie</option>
+        <option value="Neonatologie">Neonatologie</option>
+        <option value="Neuropädiatrie">Neuropädiatrie</option>
+      </optgroup>
+      <optgroup label="Radiologie">
+        <option value="Kinder- und Jugendradiologie">Kinder- und Jugendradiologie</option>
+        <option value="Neuroradiologie">Neuroradiologie</option>
+      </optgroup>
+    </select>
+
+    <!-- Second multi-select: Zusatz-Weiterbildungen -->
+    <h2><label for="ZusatzWeiterbildungen">Zusatz-Weiterbildungen</label></h2>
+    <select name="ZusatzWeiterbildungen[]" id="ZusatzWeiterbildungen" multiple="multiple">
+      <option value="Ärztliches Qualitätsmanagement">Ärztliches Qualitätsmanagement</option>
+      <option value="Akupunktur">Akupunktur</option>
+      <option value="Allergologie">Allergologie</option>
+      <option value="Andrologie">Andrologie</option>
+      <option value="Balneologie und Medizinische Klimatologie">Balneologie und Medizinische Klimatologie</option>
+      <option value="Betriebsmedizin">Betriebsmedizin</option>
+      <option value="Dermatopathologie">Dermatopathologie</option>
+      <option value="Diabetologie">Diabetologie</option>
+      <option value="Ernährungsmedizin">Ernährungsmedizin</option>
+      <option value="Flugmedizin">Flugmedizin</option>
+      <option value="Geriatrie">Geriatrie</option>
+      <option value="Gynäkologische Exfoliativ-Zytologie">Gynäkologische Exfoliativ-Zytologie</option>
+      <option value="Hämostaseologie">Hämostaseologie</option>
+      <option value="Handchirurgie">Handchirurgie</option>
+      <option value="Immunologie">Immunologie</option>
+      <option value="Infektiologie">Infektiologie</option>
+      <option value="Intensivmedizin">Intensivmedizin</option>
+      <option value="Kardiale Magnetresonanztomographie">Kardiale Magnetresonanztomographie</option>
+      <option value="Kinder- und Jugend-Endokrinologie und -Diabetologie">Kinder- und Jugend-Endokrinologie und -Diabetologie</option>
+      <option value="Kinder- und Jugend-Gastroenterologie">Kinder- und Jugend-Gastroenterologie</option>
+      <option value="Kinder- und Jugend-Nephrologie">Kinder- und Jugend-Nephrologie</option>
+      <option value="Kinder- und Jugend-Orthopädie">Kinder- und Jugend-Orthopädie</option>
+      <option value="Kinder- und Jugend-Pneumologie">Kinder- und Jugend-Pneumologie</option>
+      <option value="Kinder- und Jugend-Rheumatologie">Kinder- und Jugend-Rheumatologie</option>
+      <option value="Klinische Akut- und Notfallmedizin">Klinische Akut- und Notfallmedizin</option>
+      <option value="Krankenhaushygiene">Krankenhaushygiene</option>
+      <option value="Magnetresonanztomographie">Magnetresonanztomographie</option>
+      <option value="Manuelle Medizin">Manuelle Medizin</option>
+      <option value="Medikamentöse Tumortherapie">Medikamentöse Tumortherapie</option>
+      <option value="Medizinische Informatik">Medizinische Informatik</option>
+      <option value="Naturheilverfahren">Naturheilverfahren</option>
+      <option value="Notfallmedizin">Notfallmedizin</option>
+      <option value="Nuklearmedizinische Diagnostik für Radiologen">Nuklearmedizinische Diagnostik für Radiologen</option>
+      <option value="Orthopädische Rheumatologie">Orthopädische Rheumatologie</option>
+      <option value="Palliativmedizin">Palliativmedizin</option>
+      <option value="Phlebologie">Phlebologie</option>
+      <option value="Physikalische Therapie">Physikalische Therapie</option>
+      <option value="Plastische und Ästhetische Operationen">Plastische und Ästhetische Operationen</option>
+      <option value="Proktologie">Proktologie</option>
+      <option value="Psychoanalyse">Psychoanalyse</option>
+      <option value="Psychotherapie">Psychotherapie</option>
+      <option value="Rehabilitationswesen">Rehabilitationswesen</option>
+      <option value="Röntgendiagnostik für Nuklearmediziner">Röntgendiagnostik für Nuklearmediziner</option>
+      <option value="Schlafmedizin">Schlafmedizin</option>
+      <option value="Sexualmedizin">Sexualmedizin</option>
+      <option value="Sozialmedizin">Sozialmedizin</option>
+      <option value="Spezielle Kardiologie für Erwachsene mit angeborenen Herzfehlern (EMAH)">Spezielle Kardiologie für Erwachsene mit angeborenen Herzfehlern (EMAH)</option>
+      <option value="Spezielle Kinder- und Jugend-Urologie">Spezielle Kinder- und Jugend-Urologie</option>
+      <option value="Spezielle Orthopädische Chirurgie">Spezielle Orthopädische Chirurgie</option>
+      <option value="Spezielle Schmerztherapie">Spezielle Schmerztherapie</option>
+      <option value="Spezielle Unfallchirurgie">Spezielle Unfallchirurgie</option>
+      <option value="Spezielle Viszeralchirurgie">Spezielle Viszeralchirurgie</option>
+      <option value="Sportmedizin">Sportmedizin</option>
+      <option value="Suchtmedizinische Grundversorgung">Suchtmedizinische Grundversorgung</option>
+      <option value="Transplantationsmedizin">Transplantationsmedizin</option>
+      <option value="Tropenmedizin">Tropenmedizin</option>
+    </select>
+
+    <h2><label for="fakulatate_Weiterbildung">Fakultative Weiterbildung</label></h2>
+    <select name="Fakultative Weiterbildung" id="fakulatate_Weiterbildung" multiple="multiple">
+      <optgroup label="Allgemeinmedizin">
+        <option value="Klinische Geriatrie">Klinische Geriatrie</option>
+      </optgroup>
+      <optgroup label="Anästhesiologie">
+        <option value="Spezielle Anästhesiologische Intensivmedizin">Spezielle Anästhesiologische Intensivmedizin</option>
+      </optgroup>
+      <optgroup label="Chirurgie">
+        <option value="Spezielle Chirurgische Intensivmedizin">Spezielle Chirurgische Intensivmedizin</option>
+      </optgroup>
+      <optgroup label="Frauenheilkunde und Geburtshilfe">
+        <option value="Gynäkologische Endokrinologie und Reproduktionsmedizin">Gynäkologische Endokrinologie und Reproduktionsmedizin</option>
+        <option value="Spezielle Geburtshilfe und Perinatalmedizin">Spezielle Geburtshilfe und Perinatalmedizin</option>
+        <option value="Gynäkologische Endokrinologie und Reproduktionsmedizin">Gynäkologische Endokrinologie und Reproduktionsmedizin</option>
+        <optgroup label="Herzchirurgie">
+          <option value="Spezielle Herzchirurgische Intensivmedizin">Spezielle Herzchirurgische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Innere Medizin">
+          <option value="Klinische Geriatrie">Klinische Geriatrie</option>
+          <option value="Spezielle Internistische Intensivmedizin">Spezielle Internistische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Kinderchirurgie">
+          <option value="Spezielle Kinderchirurgische Intensivmedizin">Spezielle Kinderchirurgische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Kinderheilkunde">
+          <option value="Spezielle Pädiatrische Intensivmedizin">Spezielle Pädiatrische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Nervenheilkunde">
+          <option value="Klinische Geriatrie">Klinische Geriatrie</option>
+        </optgroup>
+        <optgroup label="Neurochirurgie">
+          <option value="Spezielle Neurochirurgische Intensivmedizin">Spezielle Neurochirurgische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Neurologie">
+          <option value="Klinische Geriatrie">Klinische Geriatrie</option>
+          <option value="Spezielle Neurologische Intensivmedizin">Spezielle Neurologische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Orthopädie">
+          <option value="Spezielle Orthopädische Chirurgie">Spezielle Orthopädische Chirurgie</option>
+        </optgroup>
+        <optgroup label="Pathologie">
+          <option value="Molekularpathologie">Molekularpathologie</option>
+        </optgroup>
+        <optgroup label="Plastische Chirurgie">
+          <option value="Spezielle Plastisch-Chirurgische Intensivmedizin">Spezielle Plastisch-Chirurgische Intensivmedizin</option>
+        </optgroup>
+        <optgroup label="Psychiatrie und Psychotherapie">
+          <option value="Klinische Geriatrie">Klinische Geriatrie</option>
+        </optgroup>
+        <optgroup label="Urologie">
+          <option value="Spezielle Urologische Chirurgie">Spezielle Urologische Chirurgie</option>
+        </optgroup>
+      </optgroup>
+    </select>
+
+    <h2><label for="Fachkunden">Fachkunden</label></h2>
+    <select name="Fachkunden" id="Fachkunden" multiple="multiple">
+      <option value="Fachkunde in Laboruntersuchungen in der Anästhesiologie">
+        Fachkunde in Laboruntersuchungen in der Anästhesiologie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Arbeitsmedizin">
+        Fachkunde in Laboruntersuchungen in der Arbeitsmedizin
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Augenheilkunde">
+        Fachkunde in Laboruntersuchungen in der Augenheilkunde
+      </option>
+      <option value="Fachkunde in Laserchirurgie in der Augenheilkunde">
+        Fachkunde in Laserchirurgie in der Augenheilkunde
+      </option>
+      <option value="Fachkunde in Laserchirurgie höheren Schwierigkeitsgrades in der Augenheilkunde">
+        Fachkunde in Laserchirurgie höheren Schwierigkeitsgrades in der Augenheilkunde
+      </option>
+      <option value="Fachkunde in okulären Eingriffen höheren Schwierigkeitsgrades in der Augenheilkunde">
+        Fachkunde in okulären Eingriffen höheren Schwierigkeitsgrades in der Augenheilkunde
+      </option>
+      <option value="Fachkunde in Augenmuskelchirurgie höheren Schwierigkeitsgrades in der Augenheilkunde">
+        Fachkunde in Augenmuskelchirurgie höheren Schwierigkeitsgrades in der Augenheilkunde
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Chirurgie">
+        Fachkunde in Laboruntersuchungen in der Chirurgie
+      </option>
+      <option value="Fachkunde Ösophago-Gastro-Duodenoskopie in der Chirurgie">
+        Fachkunde Ösophago-Gastro-Duodenoskopie in der Chirurgie
+      </option>
+      <option value="Fachkunde Sonographie der weiblichen Genitalorgane in der Diagnostischen Radiologie">
+        Fachkunde Sonographie der weiblichen Genitalorgane in der Diagnostischen Radiologie
+      </option>
+      <option value="Fachkunde Songraphie der Brustdrüse in der Diagnostischen Radiologie">
+        Fachkunde Songraphie der Brustdrüse in der Diagnostischen Radiologie
+      </option>
+      <option value="Fachkunde Sonographie der Gesichtsweichteile in der Diagnostischen Radiologie">
+        Fachkunde Sonographie der Gesichtsweichteile in der Diagnostischen Radiologie
+      </option>
+      <option value="Fachkunde Sonographie der abdominellen und retroperitonealen Gefäße in der Diagnostischen Radiologie">
+        Fachkunde Sonographie der abdominellen und retroperitonealen Gefäße in der Diagnostischen Radiologie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Frauenheilkunde und Geburtshilfe">
+        Fachkunde in Laboruntersuchungen in der Frauenheilkunde und Geburtshilfe
+      </option>
+      <option value="Fachkunde gynäkologische Exfoliativ-Zytologie">
+        Fachkunde gynäkologische Exfoliativ-Zytologie
+      </option>
+      <option value="Fachkunde gynäkologische Aspirations- und Punktatzytologie des Genitales und der Mamma">
+        Fachkunde gynäkologische Aspirations- und Punktatzytologie des Genitales und der Mamma
+      </option>
+      <option value="Fachkunde Sonographie der Brustdrüse in der Frauenheilkunde und Geburtshilfe">
+        Fachkunde Sonographie der Brustdrüse in der Frauenheilkunde und Geburtshilfe
+      </option>
+      <option value="Fachkunde Mammographie in der Frauenheilkunde und Geburtshilfe">
+        Fachkunde Mammographie in der Frauenheilkunde und Geburtshilfe
+      </option>
+      <option value="Fachkunde Sonographie der Gefäße des weiblichen Genitalsystems in der Frauenheilkunde und Geburtshilfe">
+        Fachkunde Sonographie der Gefäße des weiblichen Genitalsystems in der Frauenheilkunde und Geburtshilfe
+      </option>
+      <option value="Fachkunde Sonographie der Gefäße des Fetus in der Frauenheilkunde und Geburtshilfe">
+        Fachkunde Sonographie der Gefäße des Fetus in der Frauenheilkunde und Geburtshilfe
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in Hals-Nasen-Ohrenheilkunde">
+        Fachkunde in Laboruntersuchungen in Hals-Nasen-Ohrenheilkunde
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in Haut- und Geschlechtskrankheiten">
+        Fachkunde in Laboruntersuchungen in Haut- und Geschlechtskrankheiten
+      </option>
+      <option value="Fachkunde Sonographie der Extremitätengefäße im Gebiet Haut- und Geschlechtskrankheiten">
+        Fachkunde Sonographie der Extremitätengefäße im Gebiet Haut- und Geschlechtskrankheiten
+      </option>
+      <option value="Fachkunde Sonographie der Penisgefäße und Gefäße der Skrotalfächer im Gebiet Haut- und Geschlechtskrankheiten">
+        Fachkunde Sonographie der Penisgefäße und Gefäße der Skrotalfächer im Gebiet Haut- und Geschlechtskrankheiten
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Herzchirurgie">
+        Fachkunde in Laboruntersuchungen in der Herzchirurgie
+      </option>
+      <option value="Fachkunde Echokardiographie in der Herzchirurgie">
+        Fachkunde Echokardiographie in der Herzchirurgie
+      </option>
+      <option value="Fachkunde in der zytogenetischen Labordiagnostik">
+        Fachkunde in der zytogenetischen Labordiagnostik
+      </option>
+      <option value="Fachkunde in der molekulargenetischen Labordiagnostik genetisch bedingter Krankheiten">
+        Fachkunde in der molekulargenetischen Labordiagnostik genetisch bedingter Krankheiten
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Inneren Medizin">
+        Fachkunde in Laboruntersuchungen in der Inneren Medizin
+      </option>
+      <option value="Fachkunde Internistische Röntgendiagnostik">
+        Fachkunde Internistische Röntgendiagnostik
+      </option>
+      <option value="Fachkunde Sigmoido-Koloskopie in der Inneren Medizin">
+        Fachkunde Sigmoido-Koloskopie in der Inneren Medizin
+      </option>
+      <option value="Fachkunde Sonographie der extrakraniellen hirnversorgenden Gefäße in der Inneren Medizin">
+        Fachkunde Sonographie der extrakraniellen hirnversorgenden Gefäße in der Inneren Medizin
+      </option>
+      <option value="Fachkunde Bronchoskopie in der Inneren Medizin">
+        Fachkunde Bronchoskopie in der Inneren Medizin
+      </option>
+      <option value="Fachkunde ”Echokardiogarphie”">
+        Fachkunde ”Echokardiogarphie”
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in Kinderchirurgie">
+        Fachkunde in Laboruntersuchungen in Kinderchirurgie
+      </option>
+      <option value="Fachkunde Sonographie der Bewegungsorgane in der Kinderchirurgie">
+        Fachkunde Sonographie der Bewegungsorgane in der Kinderchirurgie
+      </option>
+      <option value="Fachkunde Sonographie der Säuglingshüfte in der Kinderchirurgie">
+        Fachkunde Sonographie der Säuglingshüfte in der Kinderchirurgie
+      </option>
+      <option value="Fachkunde Ösophago-Gastro-Duodenoskopie in der Kinderchirurgie">
+        Fachkunde Ösophago-Gastro-Duodenoskopie in der Kinderchirurgie
+      </option>
+      <option value="Fachkunde Sigmoido-Koloskopie in der Kinderchirurgie">
+        Fachkunde Sigmoido-Koloskopie in der Kinderchirurgie
+      </option>
+      <option value="Fachkunde Bronchoskopie in der Kinderchirurgie">
+        Fachkunde Bronchoskopie in der Kinderchirurgie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Kinderheilkunde">
+        Fachkunde in Laboruntersuchungen in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie der Nebenhöhlen in der Kinderheilkunde">
+        Fachkunde Sonographie der Nebenhöhlen in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie der Schilddrüse in der Kinderheilkunde">
+        Fachkunde Sonographie der Schilddrüse in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie der Gesichtsweichteile und Weichteile des Halses in der Kinderheilkunde">
+        Fachkunde Sonographie der Gesichtsweichteile und Weichteile des Halses in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie der Thoraxorgane in der Kinderheilkunde">
+        Fachkunde Sonographie der Thoraxorgane in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie des Magen-Darm-Traktes in der Kinderheilkunde">
+        Fachkunde Sonographie des Magen-Darm-Traktes in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde Sonographie der weiblichen Genitalorgane in der Kinderheilkunde">
+        Fachkunde Sonographie der weiblichen Genitalorgane in der Kinderheilkunde
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Mund-Kiefer-Gesichtschirurgie">
+        Fachkunde in Laboruntersuchungen in der Mund-Kiefer-Gesichtschirurgie
+      </option>
+      <option value="Fachkunde Sonographie der extrakraniellen hirnversorgenden Gefäße in der Mund-Kiefer-Gesichtschirurgie">
+        Fachkunde Sonographie der extrakraniellen hirnversorgenden Gefäße in der Mund-Kiefer-Gesichtschirurgie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Nervenheilkunde">
+        Fachkunde in Laboruntersuchungen in der Nervenheilkunde
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Neurochirurgie">
+        Fachkunde in Laboruntersuchungen in der Neurochirurgie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Neurologie">
+        Fachkunde in Laboruntersuchungen in der Neurologie
+      </option>
+      <option value="Fachkunde Magnetresonanztomographie und -spektroskopie in der Nuklearmedizin">
+        Fachkunde Magnetresonanztomographie und -spektroskopie in der Nuklearmedizin
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Orthopädie">
+        Fachkunde in Laboruntersuchungen in der Orthopädie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Plastischen Chirurgie">
+        Fachkunde in Laboruntersuchungen in der Plastischen Chirurgie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Psychiatrie und Psychotherapie">
+        Fachkunde in Laboruntersuchungen in der Psychiatrie und Psychotherapie
+      </option>
+      <option value="Fachkunde in Laboruntersuchungen in der Urologie">
+        Fachkunde in Laboruntersuchungen in der Urologie
+      </option>
+    </select>
+
+    <!-- Some submit button to post the form -->
+    <p>
+      <button type="submit" style="margin-top:20px;">absenden</button>
+    </p>
+  </form>
+
+  <!-- 4. Inline script to initialize Select2 -->
+  <script>
+    $(document).ready(function() {
+      // Turn the Fachgebiet und Facharztkompetenz <select> into a Select2 multi-select
+      $('#F2').select2({
+        placeholder: "Wählen Sie Fachrichtungen",
+        allowClear: true
+      });
+
+      // Turn the Schwerpunkte <select> into a Select2 multi-select
+      $('#Schwerpunkte').select2({
+        placeholder: "Wählen Sie Schwerpunkte",
+        allowClear: true
+      });
+
+      // Turn the ZusatzWeiterbildungen <select> into a Select2 multi-select
+      $('#ZusatzWeiterbildungen').select2({
+        placeholder: "Wählen Sie Zusatz-Weiterbildungen",
+        allowClear: true
+      });
+
+      // Turn the fakultative Weiterbildung <select> into a Select2 multi-select
+      $('#fakulatate_Weiterbildung').select2({
+        placeholder: "Wählen Sie Ihre fakultative Weiterbildung",
+        allowClear: true
+      });
+
+      // Turn the Fachkunden <select> into a Select2 multi-select
+      $('#Fachkunden').select2({
+        placeholder: "Wählen Sie Ihre Fachkunden",
+        allowClear: true
+      });
+    });
+  </script>
+</body>
+</html>
